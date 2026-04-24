@@ -203,12 +203,12 @@ def search(query: str):
     print(f"✅ Specific context extracted for the agent to use.")
     return extracted_answer
 
-# --- Agent Setup (Your existing prompt and agent creation) ---
+# --- Agent Setup ---
 tools = [book_study_room, search, draft_email, send_email, dist]
 prompt = ChatPromptTemplate.from_messages([
     (
         "system",
-        # Your existing system prompt here...
+    
         """You are a helpful and efficient university assistant for the University of Texas at Arlington also called as UTA. You have four primary capabilities and after performing any of the below task you should be ready again to perform all task:
 
         1.  **Answering Questions:** For any general questions about the university of Texas at Arlington, you must use the `search` tool.
@@ -248,9 +248,9 @@ def respond(message, history):
 def transcribe_audio(audio_path):
     if not audio_path:
         return ""
-    print(f"🎤 Transcribing audio: {audio_path}")
+    print(f" Transcribing audio: {audio_path}")
     transcribed_text = whisper_model.transcribe(audio_path)["text"]
-    print(f"✅ Transcription complete: {transcribed_text}")
+    print(f" Transcription complete: {transcribed_text}")
     return transcribed_text
 
 # This function handles the chat logic when the "Submit" button is clicked
