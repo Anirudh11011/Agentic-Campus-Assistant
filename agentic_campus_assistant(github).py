@@ -274,7 +274,7 @@ def chat_responder(message, history):
     # 4. Return the updated history and an empty string to clear the textbox
     return history, ""
 
-# Your custom CSS from your old project
+
 custom_css = """
 body {
     margin: 0;
